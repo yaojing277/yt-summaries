@@ -1,0 +1,46 @@
+{
+  "updated_at": null,
+  "source": null,
+  "quotes": [
+    {
+      "symbol": "t00",
+      "name": "加權指數",
+      "price": null,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    },
+    {
+      "symbol": "2330",
+      "name": "台積電",
+      "price": null,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    },
+    {
+      "symbol": "00631L",
+      "name": "元大台灣50正2",
+      "price": null,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    },
+    {
+      "symbol": "00675L",
+      "name": "富邦臺灣加權正2",
+      "price": null,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    },
+    {
+      "symbol": "00685L",
+      "name": "群益臺灣加權正2",
+      "price": null,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    }
+  ]
+}
