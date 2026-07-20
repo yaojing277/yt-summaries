@@ -1,6 +1,6 @@
 {
-  "updated_at": null,
-  "source": null,
+  "updated_at": "2026-07-20",
+  "source": "manual（券商盤中零股成交價）",
   "quotes": [
     {
       "symbol": "t00",
@@ -14,6 +14,22 @@
       "symbol": "2330",
       "name": "台積電",
       "price": null,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    },
+    {
+      "symbol": "2454",
+      "name": "聯發科",
+      "price": 3300.0,
+      "prev_close": null,
+      "change": null,
+      "change_pct": null
+    },
+    {
+      "symbol": "6515",
+      "name": "穎崴",
+      "price": 5990.0,
       "prev_close": null,
       "change": null,
       "change_pct": null

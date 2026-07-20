@@ -23,6 +23,8 @@ TAIPEI = timezone(timedelta(hours=8))
 WATCHLIST = [
     {"symbol": "t00",    "yahoo": "^TWII",     "name": "加權指數"},
     {"symbol": "2330",   "yahoo": "2330.TW",   "name": "台積電"},
+    {"symbol": "2454",   "yahoo": "2454.TW",   "name": "聯發科"},
+    {"symbol": "6515",   "yahoo": "6515.TW",   "name": "穎崴"},
     {"symbol": "00631L", "yahoo": "00631L.TW", "name": "元大台灣50正2"},
     {"symbol": "00675L", "yahoo": "00675L.TW", "name": "富邦臺灣加權正2"},
     {"symbol": "00685L", "yahoo": "00685L.TW", "name": "群益臺灣加權正2"},
