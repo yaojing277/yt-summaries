@@ -112,6 +112,7 @@ def build_quote(w, price, prev):
         "prev_close": prev,
         "change": change,
         "change_pct": None if (change is None or not prev) else round(change / prev * 100, 2),
+        "as_of": None if price is None else datetime.now(TAIPEI).strftime("%Y-%m-%d"),
     }
 
 

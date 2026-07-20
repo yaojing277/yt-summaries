@@ -12,7 +12,8 @@
     '.stock-ticker .st-up{color:#ff6b6b;}',   /* 台股慣例：漲紅 */
     '.stock-ticker .st-down{color:#51cf66;}', /* 跌綠 */
     '.stock-ticker .st-flat{color:var(--muted,#8b96ab);}',
-    '.stock-ticker .st-meta{margin-left:auto;color:var(--muted,#8b96ab);font-size:.75rem;}'
+    '.stock-ticker .st-meta{margin-left:auto;color:var(--muted,#8b96ab);font-size:.75rem;}',
+    '.stock-ticker .st-asof{color:var(--muted,#8b96ab);font-size:.72rem;}'
   ].join('');
   var style = document.createElement('style');
   style.textContent = css;
@@ -28,6 +29,9 @@
   function render(data, liveNote) {
     var el = document.getElementById('stock-ticker');
     if (!el || !data || !data.quotes) return;
+    var maxAsOf = data.quotes.reduce(function (m, q) {
+      return (q.as_of && q.as_of > m) ? q.as_of : m;
+    }, '');
     var html = data.quotes.map(function (q) {
       var digits = q.symbol === 't00' ? 0 : 2;
       var cls = 'st-flat', sign = '';
@@ -37,8 +41,11 @@
         ? ''
         : '<span class="st-chg ' + cls + '">' + sign + fmt(Math.abs(q.change), digits) +
           ' (' + fmt(Math.abs(q.change_pct), 2) + '%)</span>';
+      var stale = (q.as_of && maxAsOf && q.as_of < maxAsOf)
+        ? '<span class="st-asof">(' + q.as_of.slice(5).replace('-', '/') + ')</span>'
+        : '';
       return '<span class="st-item"><span class="st-name">' + q.name + '</span>' +
-             '<span class="st-price ' + cls + '">' + fmt(q.price, digits) + '</span>' + chg + '</span>';
+             '<span class="st-price ' + cls + '">' + fmt(q.price, digits) + '</span>' + chg + stale + '</span>';
     }).join('');
     var note = liveNote || (data.updated_at ? '更新於 ' + data.updated_at : '報價待更新');
     el.innerHTML = html + '<span class="st-meta">📈 ' + note + '</span>';
